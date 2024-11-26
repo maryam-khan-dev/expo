@@ -10,6 +10,8 @@ extension ExpoSwiftUI {
   open class ViewProps: ObservableObject, Record {
     public required init() {}
 
+    @Field public var children: [Child]?
+
     internal func updateRawProps(_ rawProps: [String: Any], appContext: AppContext) throws {
       // Update the props just like the records
       try update(withDict: rawProps, appContext: appContext)
